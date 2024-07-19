@@ -1,0 +1,17 @@
+{% extends 'inner-page.html' %}
+{% load static %}
+
+{% block body %}
+
+      <!---Upload image--->
+
+    <form method="post" enctype="multipart/form-data" class="text-center d-block m-auto mb-4">
+        {% csrf_token %}
+
+         <h2>Upload Image</h2>
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+        <a href="{% url 'image' %}" class="btn btn-warning">Display images</a>
+    </form>
+
+{% endblock %}

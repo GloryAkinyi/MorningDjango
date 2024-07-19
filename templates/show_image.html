@@ -1,0 +1,30 @@
+{% extends 'inner-page.html' %}
+{% load static %}
+
+{% block body %}
+
+
+       <!----Show image--->
+      <h2 class="text-center">Uploaded Images</h2>
+
+       <div class="container">
+          <div style="display: flex;
+          justify-content:space-between;
+          flex-wrap: wrap">
+               {% for image in images %}
+              <div class="col mb-2">
+                  <img src="{{ image.image.url }}" alt="Uploaded Image" style="width: 300px;height:300px"> <br>
+                  <p><strong>Title :</strong>{{ image.title }}</p>
+                  <p><strong>Price :</strong>{{ image.price }}</p>
+
+                  <a href="/imagedelete/{{ image.id }}" class="btn btn-outline-danger">DELETE</a>
+                  <a href="" class="btn btn-outline-success">PAY</a><br>
+              </div>
+           {% endfor %}
+          </div>
+
+       </div>
+
+
+
+{% endblock %}
