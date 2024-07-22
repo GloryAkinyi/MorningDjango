@@ -18,7 +18,7 @@
                   <p><strong>Price :</strong>{{ image.price }}</p>
 
                   <a href="/imagedelete/{{ image.id }}" class="btn btn-outline-danger">DELETE</a>
-                  <a href="" class="btn btn-outline-success">PAY</a><br>
+                  <a href="{% url 'pay' %}" class="btn btn-outline-success">PAY</a><br>
               </div>
            {% endfor %}
           </div>
